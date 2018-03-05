@@ -59,9 +59,3 @@ inoremap <c-s> <c-o>:Update<CR>
 " Shift tab to remove tab
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
-
-" Add closing character
-inoremap { {} <Esc>i<Left>
-inoremap ( () <Esc>i<Left>
-inoremap [ [] <Esc>i<Left>
-inoremap " "" <Esc>i<Left>
