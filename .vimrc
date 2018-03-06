@@ -49,9 +49,6 @@ set backspace=indent,eol,start
 " Syntax highlighting
 syntax on
 
-" Sets how many lines of history VIM has to remember
-set history=500
-
 " Ignore case when searching
 set ignorecase
 
@@ -94,3 +91,6 @@ inoremap <c-s> <c-o>:Update<CR>
 " Shift tab to remove tab
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
+
+" Shift O to add a new line without entering Insert mode
+nnoremap O O<Esc>
