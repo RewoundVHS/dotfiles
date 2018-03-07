@@ -2,6 +2,9 @@
 set nocompatible
 filetype off
 
+" Remap leader key to comma
+let mapleader=","
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -74,6 +77,10 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " Helps with pasting from other terminals
 set clipboard=unnamed
 
+
+" Leader n to toggle NerdTree
+nnoremap <Leader>n :NERDTreeToggle<Enter>
+
 " F6 to spellcheck
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
@@ -93,4 +100,4 @@ nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
 " Shift O to add a new line without entering Insert mode
-nnoremap O O<Esc>
+nnoremap O o<Esc>
