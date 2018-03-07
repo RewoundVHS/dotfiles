@@ -2,6 +2,9 @@
 set nocompatible
 filetype off
 
+" UTF-8 encoding
+set encoding=utf-8
+
 " Remap leader key to comma
 let mapleader=","
 
@@ -77,6 +80,8 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " Helps with pasting from other terminals
 set clipboard=unnamed
 
+" Disables automatic commenting on newline:
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Leader n to toggle NerdTree
 nnoremap <Leader>n :NERDTreeToggle<Enter>
@@ -101,3 +106,20 @@ inoremap <S-Tab> <C-d>
 
 " Shift O to add a new line without entering Insert mode
 nnoremap O o<Esc>
+
+" HTML and PHP automatic tags
+autocmd FileType php,html inoremap ;h1 <h1></h1><Enter><Enter><++><Esc>2kf<i
+autocmd FileType php,html inoremap ;h2 <h2></h2><Enter><Enter><++><Esc>2kf<i
+autocmd FileType php,html inoremap ;h3 <h3></h3><Enter><Enter><++><Esc>2kf<i
+autocmd FileType php,html inoremap ;p <p></p><Enter><Enter><++><Esc>02kf>a
+autocmd FileType php,html inoremap ;a <a<Space>href=""><++></a><Space><++><Esc>14hi
+autocmd FileType php,html inoremap ;e <a<Space>target="_blank"<Space>href=""><++></a><Space><++><Esc>14hi
+autocmd FileType php,html inoremap ;ul <ul><Enter><li></li><Enter></ul><Enter><Enter><++><Esc>03kf<i
+autocmd FileType php,html inoremap ;li <Esc>o<li></li><Esc>F>a
+autocmd FileType php,html inoremap ;ol <ol><Enter><li></li><Enter></ol><Enter><Enter><++><Esc>03kf<i
+autocmd FileType php,html inoremap ;im <table<Space>class="image"><Enter><caption align="bottom"></caption><Enter><tr><td><a<space>href="pix/<++>"><img<Space>src="pix/<++>"<Space>width="<++>"></a></td></tr><Enter></table><Enter><Enter><++><Esc>4kf>a
+autocmd FileType php,html inoremap ;td <td></td><++><Esc>Fdcit
+autocmd FileType php,html inoremap ;tr <tr></tr><Enter><++><Esc>kf<i
+autocmd FileType php,html inoremap ;th <th></th><++><Esc>Fhcit
+autocmd FileType php,html inoremap ;tab <table><Enter></table><Esc>O
+
