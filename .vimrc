@@ -20,6 +20,12 @@ Plugin 'VundleVim/Vundle.vim'
 "NerdTree plugin
 Plugin 'scrooloose/nerdTree'
 
+" Syntax linting
+Plugin 'vim-syntastic/syntastic'
+
+" Surround plugin
+Plugin 'tpope/vim-surround'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,6 +40,19 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" Syntastic configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <Leader>s :SyntasticCheck<CR>
+nnoremap <Leader>st :SyntasticToggleMode<CR>
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 
 " Current line number and lines relative to current
 set number relativenumber
@@ -104,8 +123,8 @@ inoremap <c-s> <c-o>:Update<CR>
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
-" Shift O to add a new line without entering Insert mode
-nnoremap O o<Esc>
+" jk to ESC while in Insert mode
+inoremap jk <Esc>
 
 " HTML and PHP automatic tags
 autocmd FileType php,html inoremap ;h1 <h1></h1><Enter><Enter><++><Esc>2kf<i
@@ -122,4 +141,3 @@ autocmd FileType php,html inoremap ;td <td></td><++><Esc>Fdcit
 autocmd FileType php,html inoremap ;tr <tr></tr><Enter><++><Esc>kf<i
 autocmd FileType php,html inoremap ;th <th></th><++><Esc>Fhcit
 autocmd FileType php,html inoremap ;tab <table><Enter></table><Esc>O
-
