@@ -1,0 +1,23 @@
+! ~/.Xresources
+
+! urvxt setup
+URxvt.font: xft:scientifica
+URxvt*url-launcher:     /usr/bin/firefox
+URxvt*scrollBar:        false
+URxvt.iso14755:         False
+URxvt*dynamicColors:    on
+URxvt.internalBorder:   10
+URxvt.underlineURLs:    true
+URxvt.matcher.button:   1
+URxvt.copyCommand:      xclip -i -selection clipboard
+URxvt.pasteCommand:     xclip -o -selection clipboard
+
+! urxvt scrolling setup - up and down 10 lines
+URxvt.keysym.Shift-Up: command:\033]720;10\007
+URxvt.keysym.Shift-Down: command:\033]721;10\007
+
+! rofi setup
+rofi.font: scientifica Regular 8
+rofi.terminal: urxvt
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
