@@ -17,7 +17,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-"NerdTree plugin
+" NerdTree plugin
 Plugin 'scrooloose/nerdTree'
 
 " Syntax linting
@@ -25,6 +25,12 @@ Plugin 'vim-syntastic/syntastic'
 
 " Surround plugin
 Plugin 'tpope/vim-surround'
+
+" Targets plugin
+Plugin 'wellle/targets.vim'
+
+" Spotify
+Plugin 'HendrikPetertje/vimify'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,6 +59,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" Vimify config
+let g:spotify_token='N2YxYWZlZjVlNzhkNDVkNDhlNzQ4NmViZjNkZTM2YTM6MDIxMmU1OWQ0NmFmNDY1NDgyODlmMzVlNDAwY2M3MGU='
 
 " Current line number and lines relative to current
 set number relativenumber
