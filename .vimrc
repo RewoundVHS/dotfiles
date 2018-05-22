@@ -29,8 +29,14 @@ Plugin 'tpope/vim-surround'
 " Targets plugin
 Plugin 'wellle/targets.vim'
 
-" Spotify
+" Spotify plugin
 Plugin 'HendrikPetertje/vimify'
+
+" YouCompleteMe plugin
+Plugin 'Valloric/YouCompleteMe'
+
+" C++ highlighting plugin
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -111,6 +117,12 @@ set clipboard=unnamed
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Alt+arrow to navigate splits
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+ 
 " Leader n to toggle NerdTree
 nnoremap <Leader>n :NERDTreeToggle<Enter>
 
