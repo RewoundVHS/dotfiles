@@ -57,6 +57,7 @@ mode "resize" {
 # start a terminal
 bindsym $mod+Return exec termite
 
+#take a screenshot
 bindsym $mod+Shift+p exec scrot -e 'mv $f ~/Pictures/' --release
 
 # kill focused window
@@ -105,9 +106,6 @@ bindsym $mod+c layout default
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-
-# take a screenshot
-bindsym --release $mod+Shift+s exec scrot
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -162,6 +160,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs out of your X session)
 bindsym $mod+Shift+e exit
+# shutdown system
+bindsym $mod+Shift+s exec shutdown 0
 
 # # # # # # # # # #
 # system control  #
