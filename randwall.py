@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+# Dependencies: python-pywal
+
 import os
 import random
 import pwd
