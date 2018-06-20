@@ -176,7 +176,7 @@ type = custom/menu
 format-spacing = 1
  
 label-open = ⏻
-label-open-foreground = ${colors.foreground}
+label-open-foreground = ${colors.foreground-alt}
 label-close = cancel
 label-close-foreground = ${colors.foreground}
 label-separator = |
