@@ -19,6 +19,5 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%b>"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %F{red}*%f"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT='
-%{%K{${bg}}%F{${fg}}%} $(_collapsed_wd)%{%K{${bg_alt}}%F{${fg_alt}}%}█▓▒░%{%f%k%b%} '
+PROMPT='%{%K{${bg}}%F{${fg}}%} $(_collapsed_wd)%{%K{${bg_alt}}%F{${fg_alt}}%}█▓▒░%{%f%k%b%} '
 RPROMPT='%{%F{${fg_alt}}%}$(git_prompt_info)%{%f%k%b%}'
