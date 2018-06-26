@@ -20,8 +20,15 @@ Plugin 'VundleVim/Vundle.vim'
 " NerdTree plugin
 Plugin 'scrooloose/nerdTree'
 
-" Syntax linting
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
+
+Plugin 'tpope/vim-commentary'
+
+Plugin 'kana/vim-textobj-entire'
+
+Plugin 'kana/vim-textobj-user'
+
+Plugin 'itchyny/lightline.vim'
 
 " Surround plugin
 Plugin 'tpope/vim-surround'
@@ -53,21 +60,13 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Syntastic configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-nnoremap <Leader>s :SyntasticCheck<CR>
-nnoremap <Leader>st :SyntasticToggleMode<CR>
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
 " Vimify config
 let g:spotify_token='N2YxYWZlZjVlNzhkNDVkNDhlNzQ4NmViZjNkZTM2YTM6MDIxMmU1OWQ0NmFmNDY1NDgyODlmMzVlNDAwY2M3MGU='
+
+" lightline configuration
+let g:lightline = {}
+set laststatus=2
+let g:lightline.colorscheme='darcula'
 
 " Current line number and lines relative to current
 set number relativenumber

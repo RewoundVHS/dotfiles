@@ -1,0 +1,217 @@
+[colors]
+background = ${xrdb:color0:#222}
+background-alt = ${xrdb:color2:#222}
+foreground = ${xrdb:color1:#222}
+foreground-alt = ${xrdb:color6:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color1:#222}
+alert = ${xrdb:color0:#222}
+ 
+ 
+[bar/bottom]
+;monitor = ${env:MONITOR:HDMI-1}
+bottom = true
+width = 100%
+height = 25
+offset-x = 0
+offset-y = 0
+radius = 0
+fixed-center = true
+ 
+background = ${colors.background}
+foreground = ${colors.foreground}
+ 
+line-size = 2
+line-color = #f00
+ 
+border-size = 0
+border-color = #00000000
+ 
+padding-left = 0
+padding-right = 2
+ 
+module-margin-left = 1
+module-margin-right = 1
+ 
+font-0 = scientifica:pixelsize=13;2
+font-1 = unifont:fontformat=truetype:size=11:antialias=false;2
+font-2 = WunconSiji:size=8;1
+font-3 = Noto Sans CJK JP:size=10:antialias=true;0
+ 
+modules-left = i3
+modules-center = xwindow
+modules-right = mpd volume cpu memory date time powermenu
+ 
+tray-position = right
+tray-padding = 2
+ 
+ 
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:75:...%
+ 
+ 
+[module/arch]
+type = custom/script
+exec = echo "Linux"
+ 
+format-prefix = "Arch "
+format-prefix-foreground = #027AB6
+ 
+[module/mpd]
+type = internal/mpd
+ 
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+ 
+host = 127.0.0.1
+port = 6600
+password = 
+ 
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+ 
+label-song-maxlen = 25
+label-song-ellipsis = true
+ 
+[module/xbacklight]
+type = internal/xbacklight
+ 
+format = <label> <bar>
+label = BL
+ 
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #ff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+ 
+[module/i3]
+type = internal/i3
+ 
+enable-click = true
+strip-wsnumbers = true
+ 
+ws-icon-0 = 1;a
+ws-icon-1 = 2;b
+ws-icon-2 = 3;c
+ws-icon-3 = 4;d
+ws-icon-4 = 5;e
+ 
+label-focused = %index%
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.foreground}
+label-focused-padding = 1
+ 
+label-unfocused = %index%
+label-unfocused-padding = 1
+ 
+label-visible = %index%
+label-visible-padding = 1
+ 
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = ${xrdb:color0:#222}
+label-urgent-padding = 1
+ 
+ 
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU: "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage%%
+ 
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "RAM: "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage_used%%
+ 
+ 
+[module/date]
+type = internal/date
+interval = 5
+ 
+date = "%d/%m/%Y"
+date-alt = "%a Week %V"
+ 
+ 
+label = %date%
+ 
+ 
+[module/time]
+type = internal/date
+interval = 5
+ 
+time = %I:%M %p
+label = %time%
+ 
+ 
+[module/volume]
+type = internal/volume
+ 
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+ 
+format-muted = <label-muted>
+label-muted = 
+label-muted-foreground = ${colors.foreground-alt}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.foreground-alt}
+ 
+[module/powermenu]
+type = custom/menu
+ 
+format-spacing = 1
+ 
+label-open = ⏻
+label-open-foreground = ${colors.foreground-alt}
+label-close = cancel
+label-close-foreground = ${colors.foreground}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+ 
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = shutdown
+menu-0-1-exec = menu-open-2
+menu-0-2 = hibernate
+menu-0-2-exec = menu-open-3
+menu-0-3 = suspend
+menu-0-3-exec = menu-open-4
+menu-0-4 = log out
+menu-0-4-exec = menu-open-5
+ 
+menu-1-0 = confirm
+menu-1-0-exec = systemctl reboot
+ 
+menu-2-0 = confirm
+menu-2-0-exec = systemctl poweroff
+ 
+menu-3-0 = confirm
+menu-3-0-exec = systemctl hibernate
+ 
+menu-4-0 = confirm
+menu-4-0-exec = systemctl suspend
+ 
+menu-5-0 = confirm
+menu-5-0-exec = i3-msg exit
+ 
+ 
+[settings]
+screenchange-reload = true
+ 
+[global/wm]
+margin-top = 5
+margin-bottom = 5
