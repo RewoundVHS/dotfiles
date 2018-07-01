@@ -5,6 +5,7 @@ exec --no-startup-id feh --bg-scale Pictures/space.png
 exec --no-startup-id wal -i Pictures/space.jpg
 exec --no-startup-id xrandr --output eDP1 --gamma .65:.65:.6
 exec --no-startup-id blueman-applet
+exec --no-startup-id urxvt -q -f -o
 
 # # # # # # #
 # variables #
@@ -23,6 +24,7 @@ floating_modifier $mod
 # colors
 set_from_resource $fg i3wm.color1 #ffffff
 set_from_resource $bg i3wm.color3 #f0f0f0
+set_from_resource $alt i3wm.color6 #f0f0f0
 client.focused          $fg     $fg     $bg  $fg       $fg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
@@ -64,7 +66,7 @@ bindsym $mod+Shift+p exec scrot -e 'mv $f ~/Pictures/' --release
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -nb "$bg" -nf "$fg" -sb "$fg" -sf "$bg" -fn 'scientifica'
+bindsym $mod+d exec dmenu_run -nb "$bg" -nf "$alt" -sb "$alt" -sf "$bg" -fn 'scientifica'
 #bindsym $mod+d exec dmenu_run -nb "$bg" -nf "$fg" -sb "$fg" -sf "$bg" -fn 'monospace'
 bindsym $mod+r exec rofi
 
@@ -179,6 +181,9 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 25
 bindsym XF86MonBrightnessDown exec xbacklight -dec 25
 
 bindsym $mod+o mode "resize"
+
+# lock screen
+bindsym $mod+Shift+o exec ~/.config/i3/lock.sh
 
 # # # # # # # # # # #
 # display settings  #
