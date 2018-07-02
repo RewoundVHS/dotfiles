@@ -2,7 +2,7 @@
 
 These configuration files define my desktop GNU/Linux systems.
 
-# Screenshots
+## Screenshots
 
 ![scrot1](https://user-images.githubusercontent.com/23706925/42141605-2996c176-7d78-11e8-9895-f175a4019999.png)
 
@@ -11,14 +11,14 @@ These configuration files define my desktop GNU/Linux systems.
 ## Dependencies
 
 In order to properly use my configs you'll need a few packages. I'm currently using the following:
-    - vim
-    - i3-gaps
-    - polybar
-    - dmenu
-    - python-pywal
-    - compton
-    - i3lock
-    - urxvt
+- vim
+- i3-gaps
+- polybar
+- dmenu
+- python-pywal
+- compton
+- i3lock
+- urxvt
 
 ## randwall.py
 
