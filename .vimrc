@@ -20,15 +20,21 @@ Plugin 'VundleVim/Vundle.vim'
 " NerdTree plugin
 Plugin 'scrooloose/nerdTree'
 
+" Syntax linting
 Plugin 'w0rp/ale'
 
+" Comment lines with gc
 Plugin 'tpope/vim-commentary'
 
+" Whole file text object
 Plugin 'kana/vim-textobj-entire'
-
 Plugin 'kana/vim-textobj-user'
 
+" Statusline plugin
 Plugin 'itchyny/lightline.vim'
+
+" Gruvbox theme
+Plugin 'morhetz/gruvbox'
 
 " Surround plugin
 Plugin 'tpope/vim-surround'
@@ -48,17 +54,6 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " Vimify config
 let g:spotify_token='N2YxYWZlZjVlNzhkNDVkNDhlNzQ4NmViZjNkZTM2YTM6MDIxMmU1OWQ0NmFmNDY1NDgyODlmMzVlNDAwY2M3MGU='
@@ -66,7 +61,10 @@ let g:spotify_token='N2YxYWZlZjVlNzhkNDVkNDhlNzQ4NmViZjNkZTM2YTM6MDIxMmU1OWQ0NmF
 " lightline configuration
 let g:lightline = {}
 set laststatus=2
-let g:lightline.colorscheme='darcula'
+let g:lightline_colorscheme = 'gruvbox'
+
+colorscheme gruvbox
+" set background=light
 
 " Current line number and lines relative to current
 set number relativenumber
@@ -142,6 +140,10 @@ inoremap <c-s> <c-o>:Update<CR>
 " Shift tab to remove tab
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
+
+" if empty(v:servername) && exists('*remote_startserver')
+"     call remote_startserver('VIM')
+" endif
 
 " jk to ESC while in Insert mode
 inoremap jk <Esc>

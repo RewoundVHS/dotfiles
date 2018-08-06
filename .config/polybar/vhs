@@ -12,7 +12,7 @@ alert = ${xrdb:color0:#222}
 ;monitor = ${env:MONITOR:HDMI-1}
 bottom = true
 width = 100%
-height = 25
+height = 20
 offset-x = 0
 offset-y = 0
 radius = 0
@@ -33,7 +33,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
  
-font-0 = scientifica:pixelsize=13;2
+font-0 = scientifica:pixelsize=11;2
 font-1 = unifont:fontformat=truetype:size=11:antialias=false;2
 font-2 = WunconSiji:size=8;1
 font-3 = Noto Sans CJK JP:size=10:antialias=true;0
@@ -117,7 +117,7 @@ label-visible = %index%
 label-visible-padding = 1
  
 label-urgent = %index%
-label-urgent-foreground = #000000
+label-urgent-foreground = ${colors.foreground-alt
 label-urgent-background = ${xrdb:color0:#222}
 label-urgent-padding = 1
  
