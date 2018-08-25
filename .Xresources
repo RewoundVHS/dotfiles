@@ -1,7 +1,8 @@
 ! ~/.Xresources
 
 ! urvxt setup
-URxvt.font: xft:scientifica
+URxvt.font: xft:scientifica:pixelsize=11:antialias=false
+URxvt.letterSpace: 1
 URxvt*url-launcher:     /usr/bin/firefox
 URxvt*scrollBar:        false
 URxvt.iso14755:         False
