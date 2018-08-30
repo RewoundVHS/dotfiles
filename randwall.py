@@ -1,6 +1,9 @@
 #! /usr/bin/env python3
 
 # Dependencies: python-pywal
+# This is useless, pywal will select a random
+# wallpaper if you point it at a directory.
+# Regardless, this was a fun experiment
 
 import os
 import random
