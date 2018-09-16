@@ -168,7 +168,7 @@ label-charging = %percentage%%
 type = internal/date
 interval = 5
  
-date = "%d/%m/%Y"
+date = "%m/%d/%Y"
 date-alt = "%a Week %V"
  
  
