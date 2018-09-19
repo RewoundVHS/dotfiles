@@ -1,8 +1,8 @@
 # Startup
 #exec --no-startup-id xrandr --output VGA-1 --mode 1920x1080
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id feh --bg-scale Pictures/space.png
-exec --no-startup-id wal -i Pictures/space.jpg
+# exec --no-startup-id feh --bg-scale Pictures/space.png
+exec --no-startup-id wal -i Pictures/Wallpapers/evascream.jpg -g
 exec --no-startup-id xrandr --output eDP1 --gamma .65:.65:.6
 exec --no-startup-id blueman-applet
 exec --no-startup-id urxvt -q -f -o
@@ -22,7 +22,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # colors
-set_from_resource $fg i3wm.color1 #ffffff
+set_from_resource $fg i3wm.color5 #ffffff
 set_from_resource $bg i3wm.color3 #f0f0f0
 set_from_resource $bgalt i3wm.color0 #f0f0f0
 set_from_resource $fgalt i3wm.color6 #f0f0f0
@@ -70,6 +70,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run -nb "$bgalt" -nf "$fgalt" -sb "$fgalt" -sf "$bgalt" -fn 'scientifica'
 #bindsym $mod+d exec dmenu_run -nb "$bg" -nf "$fg" -sb "$fg" -sf "$bg" -fn 'monospace'
 bindsym $mod+r exec rofi
+
+# gpg decrypt clipboard
+bindsym $mod+Shift+d exec ~/Documents/scripts/decryptclip.sh
 
 # change focus
 bindsym $mod+$left focus left
@@ -206,4 +209,6 @@ gaps outer 12
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# compton
 exec_always compton -b --config $HOME/.config/compton.conf
