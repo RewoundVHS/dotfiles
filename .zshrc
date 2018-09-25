@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/neve/.oh-my-zsh
+export ZSH=/home/neve/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -16,6 +16,7 @@ eval $(thefuck --alias)
 
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
+alias neofetch="neofetch --ascii ~/.config/neofetch/archart.txt"
 
 #alias vim="vim --servername vim"
 alias ll="ls -lhA"
@@ -23,6 +24,8 @@ alias pyx="chmod -R u+x *.py"
 alias discord="flatpak run com.discordapp.Discord"
 alias printsrc="makepkg --printsrcinfo > .SRCINFO"
 alias update="sudo pacman -Syu"
+alias webcam="mpv av://v4l2:/dev/video0"
+alias stresscpu="stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 100s"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random

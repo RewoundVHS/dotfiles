@@ -1,14 +1,19 @@
 #!/bin/bash
+# i3 lock script: pixelates screen and adds lock pic
+# requires imagemagick and scrot
 
-revert() {
-    rm /tmp/*screen*.png
-    xset dpms 0 0 0
-}
+tmpbg="/tmp/lockscreen.png"
+#text="/tmp/locktext.png"
+dir="$HOME/Pictures/lockscreen/"
+images=($(find ${dir}))
+rnd=($(seq 0 $(expr ${#images[@]} - 1) | shuf))
+pic=$dir'froppy.png'
 
-trap revert HUP INT TERM
-xset +dpms dpms 0 0 5
-scrot -d 1 /tmp/locking_screen.png
-convert -blur 0x8 /tmp/locking_screen.png /tmp/screen_blur.png
-convert -composite /tmp/screen_blur.png ~/.config/i3/arch.png -gravity Center -geometry -1x1200 /tmp/screen.png
-i3lock -i /tmp/screen.png
-revert
+scrot "$tmpbg"
+convert "$tmpbg" -blur 0x3 "$tmpbg"
+
+if [ -f "$pic" ]; then
+	convert "$tmpbg" "$pic" -gravity center -geometry +0+0 -composite -matte "$tmpbg"
+fi
+
+i3lock -u -n -e -i "$tmpbg" >> /dev/null

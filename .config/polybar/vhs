@@ -12,8 +12,8 @@ alert = ${xrdb:color0:#222}
 ;monitor = ${env:MONITOR:HDMI-1}
 bottom = true
 width = 100%
-height = 20
-offset-x = 0
+height = 25
+offset-x = 10%
 offset-y = 0
 radius = 0
 fixed-center = true
@@ -24,17 +24,19 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
  
-border-size = 0
+border-bottom-size = 5
+border-left-size = 5
+border-right-size = 5
 border-color = #00000000
  
 padding-left = 0
-padding-right = 2
+padding-right = 0
  
 module-margin-left = 1
 module-margin-right = 1
  
 font-0 = scientifica:pixelsize=11;2
-font-1 = unifont:fontformat=truetype:size=11:antialias=false;2
+font-1 = unifont
 font-2 = WunconSiji:size=8;1
 font-3 = Noto Sans CJK JP:size=10:antialias=true;0
  
@@ -42,56 +44,11 @@ modules-left = i3
 modules-center = xwindow
 modules-right = battery volume cpu memory date time powermenu
  
-tray-position = right
-tray-padding = 2
- 
- 
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:75:...%
  
- 
-[module/arch]
-type = custom/script
-exec = echo "Linux"
- 
-format-prefix = "Arch "
-format-prefix-foreground = #027AB6
- 
-[module/mpd]
-type = internal/mpd
- 
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
- 
-host = 127.0.0.1
-port = 6600
-password = 
- 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
- 
-label-song-maxlen = 25
-label-song-ellipsis = true
- 
-[module/xbacklight]
-type = internal/xbacklight
- 
-format = <label> <bar>
-label = BL
- 
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
  
 [module/i3]
 type = internal/i3
@@ -108,10 +65,10 @@ ws-icon-4 = 5;e
 label-focused = %index%
 label-focused-foreground = ${colors.background}
 label-focused-background = ${colors.foreground}
-label-focused-padding = 1
+label-focused-padding = 2
  
 label-unfocused = %index%
-label-unfocused-padding = 1
+label-unfocused-padding = 2
  
 label-visible = %index%
 label-visible-padding = 1
@@ -129,12 +86,14 @@ format-prefix = "CPU: "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage%%
  
+
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = "RAM: "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
+
  
 [module/battery]
 type = internal/battery
@@ -239,6 +198,7 @@ menu-5-0-exec = i3-msg exit
  
 [settings]
 screenchange-reload = true
+
  
 [global/wm]
 margin-top = 5

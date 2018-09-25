@@ -3,9 +3,14 @@
 exec --no-startup-id xrdb -merge ~/.Xresources
 # exec --no-startup-id feh --bg-scale Pictures/space.png
 exec --no-startup-id wal -i Pictures/Wallpapers/evascream.jpg -g
-exec --no-startup-id xrandr --output eDP1 --gamma .65:.65:.6
-exec --no-startup-id blueman-applet
+# exec --no-startup-id xrandr --output eDP1 --gamma .65:.65:.6
+exec --no-startup-id xgamma -gamma .9
+# exec --no-startup-id blueman-applet
 exec --no-startup-id urxvt -q -f -o
+
+# Disable Caps Lock and map to Escape
+exec --no-startup-id xmodmap -e "clear lock"
+exec --no-startup-id xmodmap -e "keysym Caps_Lock = Escape"
 
 # # # # # # #
 # variables #
@@ -109,6 +114,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+c layout default
+
 # bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -187,7 +193,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 25
 bindsym $mod+o mode "resize"
 
 # lock screen
-bindsym $mod+Shift+o exec ~/.config/i3/lock.sh
+bindsym $mod+Shift+o exec ~/Documents/scripts/lock.sh
 
 # # # # # # # # # # #
 # display settings  #
@@ -200,8 +206,8 @@ font pango: scientifica
 for_window [class="^.*"] border pixel 5
 
 # gaps
-gaps inner 12
-gaps outer 12
+gaps inner 15
+gaps outer 15
 
 # # # # # # # # # # # #
 # autostart programs  #
