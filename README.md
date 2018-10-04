@@ -6,7 +6,7 @@ These configuration files define my desktop GNU/Linux systems.
 
 ![scrot1](https://user-images.githubusercontent.com/23706925/46371416-4f04c580-c656-11e8-840c-6ffbd1fbdf9c.png)
 
-![scrot2](https://user-images.githubusercontent.com/23706925/46371127-7f982f80-c655-11e8-8865-b8cf1ebae6ff.png))
+![scrot2](https://user-images.githubusercontent.com/23706925/46371127-7f982f80-c655-11e8-8865-b8cf1ebae6ff.png)
 
 ## Dependencies
 
