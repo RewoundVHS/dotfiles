@@ -14,7 +14,10 @@ In order to properly use my configs you'll need a few packages. I'm currently us
 - vim
 - i3-gaps
 - polybar
+- zsh
+- oh-my-zsh
 - dmenu
+- rofi
 - python-pywal
 - compton
 - i3lock
