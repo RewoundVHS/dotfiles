@@ -7,9 +7,11 @@ set encoding=utf-8
 
 " Remap leader key to comma
 let mapleader=","
+let maplocalleader = ","
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -33,9 +35,6 @@ Plugin 'kana/vim-textobj-user'
 " Statusline plugin
 Plugin 'itchyny/lightline.vim'
 
-" Gruvbox theme
-Plugin 'morhetz/gruvbox'
-
 " Surround plugin
 Plugin 'tpope/vim-surround'
 
@@ -51,6 +50,18 @@ Plugin 'Valloric/YouCompleteMe'
 " C++ highlighting plugin
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+" vim-orgmode Plugin
+Plugin 'jceb/vim-orgmode'
+
+" speeddating Plugin
+Plugin 'tpope/vim-speeddating'
+
+" Fuzzy file Plugin
+Plugin 'junegunn/fzf.vim'
+
+" Gruvbox theme
+Plugin 'morhetz/gruvbox'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -61,16 +72,16 @@ let g:spotify_token='N2YxYWZlZjVlNzhkNDVkNDhlNzQ4NmViZjNkZTM2YTM6MDIxMmU1OWQ0NmF
 " lightline configuration
 let g:lightline = {}
 set laststatus=2
-let g:lightline_colorscheme = 'gruvbox'
 
+set background=dark
 colorscheme gruvbox
-" set background=light
 
 " Current line number and lines relative to current
 set number relativenumber
 
 " Set tab to 4 spaces
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=4 shiftwidth=4
+" set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Automatically indent next line
 set autoindent
@@ -122,6 +133,9 @@ nnoremap <leader>l :wincmd l<CR>
  
 " Leader n to toggle NerdTree
 nnoremap <Leader>n :NERDTreeToggle<Enter>
+
+" Leader f to open fzf
+nnoremap <Leader>f :FZF<Enter>
 
 " F6 to spellcheck
 map <F6> :setlocal spell! spelllang=en_us<CR>
