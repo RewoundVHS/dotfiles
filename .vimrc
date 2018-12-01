@@ -2,6 +2,7 @@
 set nocompatible
 filetype off
 
+
 " UTF-8 encoding
 set encoding=utf-8
 
@@ -124,6 +125,9 @@ set clipboard=unnamed
 
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Wrap words in LaTeX files
+autocmd BufNewFile,BufRead *.tex setlocal wrap linebreak nolist
 
 " Alt+arrow to navigate splits
 nnoremap <leader>h :wincmd h<CR>
