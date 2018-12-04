@@ -2,7 +2,6 @@
 set nocompatible
 filetype off
 
-
 " UTF-8 encoding
 set encoding=utf-8
 
@@ -29,10 +28,6 @@ Plugin 'w0rp/ale'
 " Comment lines with gc
 Plugin 'tpope/vim-commentary'
 
-" Whole file text object
-Plugin 'kana/vim-textobj-entire'
-Plugin 'kana/vim-textobj-user'
-
 " Statusline plugin
 Plugin 'itchyny/lightline.vim'
 
@@ -51,14 +46,11 @@ Plugin 'Valloric/YouCompleteMe'
 " C++ highlighting plugin
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
-" vim-orgmode Plugin
-Plugin 'jceb/vim-orgmode'
-
-" speeddating Plugin
-Plugin 'tpope/vim-speeddating'
-
-" Fuzzy file Plugin
+" Fuzzy file plugin
 Plugin 'junegunn/fzf.vim'
+
+" Goyo plugin
+Plugin 'junegunn/goyo.vim'
 
 " Gruvbox theme
 Plugin 'morhetz/gruvbox'
@@ -74,11 +66,16 @@ let g:spotify_token='N2YxYWZlZjVlNzhkNDVkNDhlNzQ4NmViZjNkZTM2YTM6MDIxMmU1OWQ0NmF
 let g:lightline = {}
 set laststatus=2
 
+" Colorscheme configuration
 set background=dark
 colorscheme gruvbox
 
 " Current line number and lines relative to current
 set number relativenumber
+
+" Remap j and k to gj and gk, also accounts for jumps
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
 " Set tab to 4 spaces
 set tabstop=4 shiftwidth=4
@@ -127,7 +124,7 @@ set clipboard=unnamed
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Wrap words in LaTeX files
-autocmd BufNewFile,BufRead *.tex setlocal wrap linebreak nolist
+autocmd BufNewFile,BufRead *.tex Goyo | setlocal wrap linebreak nolist
 
 " Alt+arrow to navigate splits
 nnoremap <leader>h :wincmd h<CR>
