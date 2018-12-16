@@ -48,7 +48,7 @@ modules-right = battery volume cpu memory date time powermenu
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:75:...%
- 
+
  
 [module/i3]
 type = internal/i3

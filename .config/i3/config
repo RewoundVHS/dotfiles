@@ -70,7 +70,7 @@ mode "resize" {
 bindsym $mod+Return exec urxvt
 
 #take a screenshot
-bindsym $mod+Shift+p exec scrot -q 100 -e 'mv $f ~/Pictures/screenshots' --release
+bindsym $mod+Shift+p exec ~/Documents/scripts/screenshot.py --release
 
 # kill focused window
 bindsym $mod+Shift+q kill

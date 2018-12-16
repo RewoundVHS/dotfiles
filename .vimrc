@@ -73,6 +73,9 @@ colorscheme gruvbox
 " Current line number and lines relative to current
 set number relativenumber
 
+" Tab completion for vim commands
+set wildmode=longest,list,full
+
 " Remap j and k to gj and gk, also accounts for jumps
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
@@ -87,7 +90,7 @@ set cindent
 set smartindent
 
 " Wrap lines
-set wrap 
+set wrap
 
 " Remove tab with backspace
 set backspace=indent,eol,start
@@ -126,12 +129,15 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Wrap words in LaTeX files
 autocmd BufNewFile,BufRead *.tex Goyo | setlocal wrap linebreak nolist
 
+" Sets default splits to below and right side
+set splitbelow splitright
+
 " Alt+arrow to navigate splits
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
- 
+
 " Leader n to toggle NerdTree
 nnoremap <Leader>n :NERDTreeToggle<Enter>
 
@@ -140,17 +146,6 @@ nnoremap <Leader>f :FZF<Enter>
 
 " F6 to spellcheck
 map <F6> :setlocal spell! spelllang=en_us<CR>
-
-" Ctrl-S to save
-command -nargs=0 -bar Update if &modified
-                           \|    if empty(bufname('%'))
-                           \|        browse confirm write
-                           \|    else
-                           \|        confirm write
-                           \|    endif
-                           \|endif
-nnoremap <silent> <C-S> :<C-u>Update<CR>
-inoremap <c-s> <c-o>:Update<CR>
 
 " Shift tab to remove tab
 nnoremap <S-Tab> <<
@@ -162,6 +157,9 @@ inoremap <S-Tab> <C-d>
 
 " jk to ESC while in Insert mode
 inoremap jk <Esc>
+
+" Remove trailing whitespace on buffer write
+autocmd BufWritePre * %s/\s\+$//e
 
 " HTML and PHP automatic tags
 autocmd FileType php,html inoremap ;h1 <h1></h1><Enter><Enter><++><Esc>2kf<i

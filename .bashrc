@@ -17,7 +17,6 @@ EDITOR=/usr/bin/vim
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
 
-alias vim="vim --servername vim"
 alias ll="ls -lhA"
 
 alias update="sudo pacman -Syu"

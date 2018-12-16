@@ -1,14 +1,14 @@
 ! ~/.Xresources
 
 ! urvxt setup
-/* URxvt.font: xft:scientifica:pixelsize=11:antialias=false */
-/* URxvt.boldFont: xft:scientifica:pixelsize=11,style=bold */
-/* URxvt.letterSpace: 1 */
-
-URxvt.font: xft:curie:pixelsize=11:antialias=false
-URxvt.boldFont: xft:curie:pixelsize=11,style=bold
-URxvt.italicFont: xft:curie:pixelsize=11,style=italic
+URxvt.font: xft:scientifica:pixelsize=11:antialias=false
+URxvt.boldFont: xft:scientifica:pixelsize=11,style=bold
 URxvt.letterSpace: 1
+
+/* URxvt.font: xft:curie:pixelsize=11:antialias=false */
+/* URxvt.boldFont: xft:curie:pixelsize=11,style=bold */
+/* URxvt.italicFont: xft:curie:pixelsize=11,style=italic */
+/* URxvt.letterSpace: 1 */
 
 /* URxvt.font: xft:Fira Code:size=11,style=medium */
 /* URxvt.boldFont: xft:Fira Code:size=11,style=bold */
@@ -22,13 +22,19 @@ URxvt.letterSpace: 1
 /* URxvt.boldItalicFont: xft:Source Code Pro:size=11,style=bold */
 /* URxvt.letterSpace: -1 */
 
+! urxvt launch browser
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&amp;@#-]*[\\w/-]
+r00t@666:~$
+
 URxvt*url-launcher:     /usr/bin/firefox
 URxvt*scrollBar:        false
 URxvt.iso14755:         False
 URxvt*dynamicColors:    on
 URxvt.internalBorder:   10
 URxvt.underlineURLs:    true
-URxvt.matcher.button:   1
 URxvt.copyCommand:      xclip -i -selection clipboard
 URxvt.pasteCommand:     xclip -o -selection clipboard
 
