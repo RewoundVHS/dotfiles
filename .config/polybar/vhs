@@ -6,8 +6,8 @@ foreground-alt = ${xrdb:color6:#222}
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color1:#222}
 alert = ${xrdb:color0:#222}
- 
- 
+
+
 [bar/bottom]
 ;monitor = ${env:MONITOR:HDMI-1}
 bottom = true
@@ -17,75 +17,76 @@ offset-x = 10%
 offset-y = 0
 radius = 0
 fixed-center = true
- 
+
 background = ${colors.background}
 foreground = ${colors.foreground}
- 
+
 line-size = 2
 line-color = #f00
- 
+
 border-bottom-size = 5
 border-left-size = 5
 border-right-size = 5
 border-color = #00000000
- 
+
 padding-left = 0
 padding-right = 0
- 
+
 module-margin-left = 1
 module-margin-right = 1
- 
+
 font-0 = scientifica:pixelsize=11;2
 font-1 = unifont
 font-2 = WunconSiji:size=8;1
 font-3 = Noto Sans CJK JP:size=10:antialias=true;0
- 
+
 modules-left = i3
 modules-center = xwindow
 modules-right = battery volume cpu memory date time powermenu
- 
+
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:75:...%
 
- 
+
 [module/i3]
 type = internal/i3
- 
+
 enable-click = true
 strip-wsnumbers = true
- 
+
 ws-icon-0 = 1;a
 ws-icon-1 = 2;b
 ws-icon-2 = 3;c
 ws-icon-3 = 4;d
 ws-icon-4 = 5;e
- 
+
 label-focused = %index%
 label-focused-foreground = ${colors.background}
 label-focused-background = ${colors.foreground}
 label-focused-padding = 2
- 
+
 label-unfocused = %index%
 label-unfocused-padding = 2
- 
+
 label-visible = %index%
 label-visible-padding = 1
- 
+
 label-urgent = %index%
-label-urgent-foreground = ${colors.foreground-alt
-label-urgent-background = ${xrdb:color0:#222}
-label-urgent-padding = 1
- 
- 
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.foreground-alt}
+
+label-urgent-padding = 2
+
+
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = "CPU: "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage%%
- 
+
 
 [module/memory]
 type = internal/memory
@@ -94,7 +95,7 @@ format-prefix = "RAM: "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 
- 
+
 [module/battery]
 type = internal/battery
 
@@ -123,32 +124,32 @@ label-discharging = %percentage%%
 
 format-charging = +<label-charging>
 label-charging = %percentage%%
- 
+
 [module/date]
 type = internal/date
 interval = 5
- 
+
 date = "%m/%d/%Y"
 date-alt = "%a Week %V"
- 
- 
+
+
 label = %date%
- 
- 
+
+
 [module/time]
 type = internal/date
 interval = 5
- 
+
 time = %I:%M %p
 label = %time%
- 
- 
+
+
 [module/volume]
 type = internal/volume
- 
+
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
- 
+
 format-muted = <label-muted>
 label-muted = 
 label-muted-foreground = ${colors.foreground-alt}
@@ -156,19 +157,19 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.foreground-alt}
- 
+
 [module/powermenu]
 type = custom/menu
- 
+
 format-spacing = 1
- 
+
 label-open = ⏻
 label-open-foreground = ${colors.foreground-alt}
 label-close = cancel
 label-close-foreground = ${colors.foreground}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
- 
+
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = shutdown
@@ -179,27 +180,27 @@ menu-0-3 = suspend
 menu-0-3-exec = menu-open-4
 menu-0-4 = log out
 menu-0-4-exec = menu-open-5
- 
+
 menu-1-0 = confirm
 menu-1-0-exec = systemctl reboot
- 
+
 menu-2-0 = confirm
 menu-2-0-exec = systemctl poweroff
- 
+
 menu-3-0 = confirm
 menu-3-0-exec = systemctl hibernate
- 
+
 menu-4-0 = confirm
 menu-4-0-exec = systemctl suspend
- 
+
 menu-5-0 = confirm
 menu-5-0-exec = i3-msg exit
- 
- 
+
+
 [settings]
 screenchange-reload = true
 
- 
+
 [global/wm]
 margin-top = 5
 margin-bottom = 5
