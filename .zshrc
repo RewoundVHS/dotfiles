@@ -31,7 +31,7 @@ alias update="sudo pacman -Syu"
 alias webcam="mpv av://v4l2:/dev/video0"
 alias stresscpu="stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 100s"
 alias pinga="ping -c 1 archlinux.org"
-alias texinit="cp /home/neve/Templates/latex/* ."
+alias texinit="rsync -av --exclude '*.bib' /home/neve/Templates/latex/ ."
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random

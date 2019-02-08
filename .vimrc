@@ -66,6 +66,9 @@ let g:spotify_token='N2YxYWZlZjVlNzhkNDVkNDhlNzQ4NmViZjNkZTM2YTM6MDIxMmU1OWQ0NmF
 let g:lightline = {}
 set laststatus=2
 
+" deoplete configuration
+let g:deoplete#enable_at_startup = 1
+
 " Colorscheme configuration
 set background=dark
 colorscheme gruvbox
