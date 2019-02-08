@@ -19,6 +19,9 @@ alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
 alias neofetch="neofetch --ascii ~/.config/neofetch/archart.txt"
 
+# Run executables without ./
+export PATH=$PATH:.
+
 #alias vim="vim --servername vim"
 alias ll="ls -lhA"
 alias pyx="chmod -R u+x *.py"
