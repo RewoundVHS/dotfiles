@@ -1,16 +1,14 @@
 # Startup
 #exec --no-startup-id xrandr --output VGA-1 --mode 1920x1080
 exec --no-startup-id xrdb -merge ~/.Xresources
-# exec --no-startup-id feh --bg-scale Pictures/space.png
 # exec --no-startup-id wal -i Pictures/Wallpapers/arrangement.jpg
-exec --no-startup-id wal -i Pictures/Wallpapers/seaside.jpg
-# exec --no-startup-id wal -i Pictures/Wallpapers/ching_yeh.jpg
+exec --no-startup-id wal -i Pictures/Wallpapers/aeroplane.jpg
 # exec --no-startup-id xrandr --output eDP1 --gamma .65:.65:.6
 exec --no-startup-id xgamma -gamma .9
 # exec --no-startup-id blueman-applet
 exec --no-startup-id urxvt -q -f -o
 exec --no-startup-id deluged
-exec --no-startup-id /home/neve/Documents/scripts/backuphome.sh
+exec --no-startup-id /home/neve/Documents/scripts/backuphome.sh --sleep
 
 # Disable Caps Lock and map to Escape
 exec --no-startup-id xmodmap -e "clear lock"
@@ -198,6 +196,9 @@ bindsym $mod+o mode "resize"
 
 # lock screen
 bindsym $mod+Shift+o exec ~/Documents/scripts/lock.sh
+
+# backup home directory
+bindsym $mod+Shift+b exec ~/Documents/scripts/backuphome.sh
 
 # # # # # # # # # # #
 # display settings  #
