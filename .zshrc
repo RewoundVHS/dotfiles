@@ -4,6 +4,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/neve/.oh-my-zsh
 export PATH=$PATH:"/home/neve/Documents/scripts"
+export PATH=$PATH:.
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 todo
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -12,13 +16,11 @@ todo
 # ZSH_THEME=powerlevel9k/powerlevel9k
 ZSH_THEME="blinks"
 
-eval $(thefuck --alias)
-
 (cat ~/.cache/wal/sequences&)
 
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
-alias neofetch="neofetch --ascii ~/.config/neofetch/archart.txt"
+# alias neofetch="neofetch --ascii ~/.config/neofetch/archart.txt"
 
 #alias vim="vim --servername vim"
 alias ll="ls -lhA"
@@ -29,6 +31,11 @@ alias update="sudo pacman -Syu"
 alias webcam="mpv av://v4l2:/dev/video0"
 alias stresscpu="stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 100s"
 alias pinga="ping -c 1 archlinux.org"
+alias xup="xrdb -merge ~/.Xresources"
+alias deezloader="npm start --prefix ~/Documents/packages/DeezloaderRemix"
+alias raspincm="ncmpcpp -h 192.168.0.13"
+
+docs() { du -a ~/Documents/ | awk '{print $2}' | fzf | xargs -r $EDITOR ;}
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random

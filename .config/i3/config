@@ -1,14 +1,11 @@
 # Startup
-#exec --no-startup-id xrandr --output VGA-1 --mode 1920x1080
 exec --no-startup-id xrdb -merge ~/.Xresources
-# exec --no-startup-id wal -i Pictures/Wallpapers/arrangement.jpg
-exec --no-startup-id wal -i Pictures/Wallpapers/aeroplane.jpg
-# exec --no-startup-id xrandr --output eDP1 --gamma .65:.65:.6
-exec --no-startup-id xgamma -gamma .9
-# exec --no-startup-id blueman-applet
+exec --no-startup-id wal -R
 exec --no-startup-id urxvt -q -f -o
 exec --no-startup-id deluged
-exec --no-startup-id /home/neve/Documents/scripts/backuphome.sh --sleep
+exec --no-startup-id mpd
+exec --no-startup-id ~/Documents/scripts/backuphome.sh --sleep
+exec --no-startup-id ~/.screenlayout/layout.sh
 
 # Disable Caps Lock and map to Escape
 exec --no-startup-id xmodmap -e "clear lock"
@@ -114,13 +111,6 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+c layout default
-
-# bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -197,8 +187,23 @@ bindsym $mod+o mode "resize"
 # lock screen
 bindsym $mod+Shift+o exec ~/Documents/scripts/lock.sh
 
+# open firefox
+bindsym $mod+Shift+f exec firefox
+
+# open thunar
+bindsym $mod+t exec thunar
+
 # backup home directory
 bindsym $mod+Shift+b exec ~/Documents/scripts/backuphome.sh
+
+# random wallpaper
+bindsym $mod+Shift+w exec wal -i ~/Pictures/Wallpapers
+
+# # # # # # # # # #
+# media controls  #
+# # # # # # # # # #
+
+bindsym $mod+p exec ~/Documents/scripts/mpdtoggle.sh
 
 # # # # # # # # # # #
 # display settings  #
@@ -208,11 +213,11 @@ bindsym $mod+Shift+b exec ~/Documents/scripts/backuphome.sh
 font pango: scientifica
 
 # window borders
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 3
 
 # gaps
-gaps inner 15
-gaps outer 15
+gaps inner 10
+gaps outer 10
 
 # # # # # # # # # # # #
 # autostart programs  #
