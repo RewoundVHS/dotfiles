@@ -26,10 +26,10 @@ set $mod Mod4
 floating_modifier $mod
 
 # colors
-set_from_resource $fg i3wm.color6 #ffffff
+set_from_resource $fg i3wm.color15 #ffffff
 set_from_resource $bg i3wm.color3 #f0f0f0
 set_from_resource $bgalt i3wm.color0 #f0f0f0
-set_from_resource $fgalt i3wm.color6 #f0f0f0
+set_from_resource $fgalt i3wm.color7 #f0f0f0
 client.focused          $fg     $fg     $bg  $fg       $fg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
