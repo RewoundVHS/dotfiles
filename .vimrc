@@ -41,6 +41,7 @@ Plugin 'wellle/targets.vim'
 Plugin 'HendrikPetertje/vimify'
 
 " YouCompleteMe plugin
+" ./vim/bundle/YouCompleteMe/install.py
 Plugin 'Valloric/YouCompleteMe'
 
 " C++ highlighting plugin
