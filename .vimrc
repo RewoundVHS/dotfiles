@@ -5,6 +5,9 @@ filetype off
 " UTF-8 encoding
 set encoding=utf-8
 
+" Mouse drag enters visual mode
+set mouse=a
+
 " Remap leader key to comma
 let mapleader=","
 let maplocalleader = ","
@@ -65,9 +68,6 @@ let g:spotify_token='N2YxYWZlZjVlNzhkNDVkNDhlNzQ4NmViZjNkZTM2YTM6MDIxMmU1OWQ0NmF
 " lightline configuration
 let g:lightline = {}
 set laststatus=2
-
-" deoplete configuration
-let g:deoplete#enable_at_startup = 1
 
 " Colorscheme configuration
 set background=dark
@@ -135,7 +135,7 @@ autocmd BufNewFile,BufRead *.tex Goyo | setlocal wrap linebreak nolist
 " Sets default splits to below and right side
 set splitbelow splitright
 
-" Alt+arrow to navigate splits
+" Leader arrow to navigate splits
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
@@ -163,19 +163,3 @@ inoremap jk <Esc>
 
 " Remove trailing whitespace on buffer write
 autocmd BufWritePre * %s/\s\+$//e
-
-" HTML and PHP automatic tags
-autocmd FileType php,html inoremap ;h1 <h1></h1><Enter><Enter><++><Esc>2kf<i
-autocmd FileType php,html inoremap ;h2 <h2></h2><Enter><Enter><++><Esc>2kf<i
-autocmd FileType php,html inoremap ;h3 <h3></h3><Enter><Enter><++><Esc>2kf<i
-autocmd FileType php,html inoremap ;p <p></p><Enter><Enter><++><Esc>02kf>a
-autocmd FileType php,html inoremap ;a <a<Space>href=""><++></a><Space><++><Esc>14hi
-autocmd FileType php,html inoremap ;e <a<Space>target="_blank"<Space>href=""><++></a><Space><++><Esc>14hi
-autocmd FileType php,html inoremap ;ul <ul><Enter><li></li><Enter></ul><Enter><Enter><++><Esc>03kf<i
-autocmd FileType php,html inoremap ;li <Esc>o<li></li><Esc>F>a
-autocmd FileType php,html inoremap ;ol <ol><Enter><li></li><Enter></ol><Enter><Enter><++><Esc>03kf<i
-autocmd FileType php,html inoremap ;im <table<Space>class="image"><Enter><caption align="bottom"></caption><Enter><tr><td><a<space>href="pix/<++>"><img<Space>src="pix/<++>"<Space>width="<++>"></a></td></tr><Enter></table><Enter><Enter><++><Esc>4kf>a
-autocmd FileType php,html inoremap ;td <td></td><++><Esc>Fdcit
-autocmd FileType php,html inoremap ;tr <tr></tr><Enter><++><Esc>kf<i
-autocmd FileType php,html inoremap ;th <th></th><++><Esc>Fhcit
-autocmd FileType php,html inoremap ;tab <table><Enter></table><Esc>O
