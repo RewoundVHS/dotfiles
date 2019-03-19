@@ -20,6 +20,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
 " NerdTree plugin
@@ -44,6 +45,7 @@ Plugin 'wellle/targets.vim'
 Plugin 'HendrikPetertje/vimify'
 
 " YouCompleteMe plugin
+" ./vim/bundle/YouCompleteMe/install.py
 Plugin 'Valloric/YouCompleteMe'
 
 " C++ highlighting plugin
