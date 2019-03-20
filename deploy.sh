@@ -14,6 +14,7 @@ cp $DIR/.bashrc $HOME
 cp $DIR/.vimrc $HOME
 cp $DIR/.Xresources $HOME
 mkdir -p $HOME/.config/compton && cp $DIR/.config/compton.conf $HOME/.config/
+mkdir -p $HOME/.config/i3 && cp $DIR/.config/i3/* $HOME/.config/i3/
 mkdir -p $HOME/.config/polybar && cp $DIR/.config/polybar/* $HOME/.config/polybar/
 mkdir -p $HOME/.config/dunst && cp $DIR/.config/dunst/* $HOME/.config/dunst/
 mkdir -p $HOME/.config/rofi && cp $DIR/.config/rofi/* $HOME/.config/rofi/
