@@ -34,6 +34,7 @@ alias pinga="ping -c 1 archlinux.org"
 alias xup="xrdb -merge ~/.Xresources"
 alias deezloader="npm start --prefix ~/Documents/packages/DeezloaderRemix"
 alias raspincm="ncmpcpp -h 192.168.0.13"
+alias paclist="pacman -Qqe | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 
 docs() { du -a ~/Documents/ | awk '{print $2}' | fzf | xargs -r $EDITOR ;}
 
