@@ -122,8 +122,9 @@ poll-interval = 5
 format-discharging = <label-discharging>
 label-discharging = %percentage%%
 
-format-charging = +<label-charging>
+format-charging =  <label-charging>
 label-charging = %percentage%%
+
 
 [module/date]
 type = internal/date
@@ -151,11 +152,11 @@ format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
 
 format-muted = <label-muted>
-label-muted = 
+label-muted = 
 label-muted-foreground = ${colors.foreground-alt}
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 ramp-volume-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
@@ -191,7 +192,7 @@ menu-3-0 = confirm
 menu-3-0-exec = systemctl hibernate
 
 menu-4-0 = confirm
-menu-4-0-exec = systemctl suspend
+menu-4-0-exec = systemctl suspend
 
 menu-5-0 = confirm
 menu-5-0-exec = i3-msg exit
