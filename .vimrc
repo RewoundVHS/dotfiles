@@ -14,7 +14,6 @@ let maplocalleader = ","
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.fzf
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -46,9 +45,6 @@ Plugin 'HendrikPetertje/vimify'
 " C++ highlighting plugin
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
-" Fuzzy file plugin
-Plugin 'junegunn/fzf.vim'
-
 " Autocompletion
 Plugin 'Valloric/YouCompleteMe'
 
@@ -64,9 +60,6 @@ Plugin 'morhetz/gruvbox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" Vimify config
-let g:spotify_token='N2YxYWZlZjVlNzhkNDVkNDhlNzQ4NmViZjNkZTM2YTM6MDIxMmU1OWQ0NmFmNDY1NDgyODlmMzVlNDAwY2M3MGU='
 
 " lightline configuration
 let g:lightline = {}
@@ -147,15 +140,11 @@ nnoremap <leader>l :wincmd l<CR>
 " Leader n to toggle NerdTree
 nnoremap <Leader>n :NERDTreeToggle<Enter>
 
-" Leader f to open fzf
-nnoremap <Leader>f :FZF<Enter>
-
 " Leader r to execute current buffer
 nnoremap <Leader>r :QuickRun<Enter>
 
 " Leader q to close current buffer
 nnoremap <Leader>q :q<Enter>
-
 
 " F6 to spellcheck
 map <F6> :setlocal spell! spelllang=en_us<CR>
