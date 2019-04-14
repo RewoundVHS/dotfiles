@@ -20,7 +20,6 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
 " NerdTree plugin
@@ -44,15 +43,17 @@ Plugin 'wellle/targets.vim'
 " Spotify plugin
 Plugin 'HendrikPetertje/vimify'
 
-" YouCompleteMe plugin
-" ./vim/bundle/YouCompleteMe/install.py
-Plugin 'Valloric/YouCompleteMe'
-
 " C++ highlighting plugin
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Fuzzy file plugin
 Plugin 'junegunn/fzf.vim'
+
+" Autocompletion
+Plugin 'Valloric/YouCompleteMe'
+
+" QuickRun plugin
+Plugin 'thinca/vim-quickrun'
 
 " Goyo plugin
 Plugin 'junegunn/goyo.vim'
@@ -149,6 +150,13 @@ nnoremap <Leader>n :NERDTreeToggle<Enter>
 " Leader f to open fzf
 nnoremap <Leader>f :FZF<Enter>
 
+" Leader r to execute current buffer
+nnoremap <Leader>r :QuickRun<Enter>
+
+" Leader q to close current buffer
+nnoremap <Leader>q :q<Enter>
+
+
 " F6 to spellcheck
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
@@ -165,3 +173,6 @@ inoremap jk <Esc>
 
 " Remove trailing whitespace on buffer write
 autocmd BufWritePre * %s/\s\+$//e
+
+" :W to write with sudo
+:command W w !sudo tee >/dev/null "%"
