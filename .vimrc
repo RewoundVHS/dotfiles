@@ -146,6 +146,9 @@ nnoremap <Leader>r :QuickRun<Enter>
 " Leader q to close current buffer
 nnoremap <Leader>q :q<Enter>
 
+" Leader x to write and close all buffers
+nnoremap <Leader>x :xa<Enter>
+
 " F6 to spellcheck
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
