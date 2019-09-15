@@ -46,7 +46,7 @@ Plugin 'HendrikPetertje/vimify'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Autocompletion
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " QuickRun plugin
 Plugin 'thinca/vim-quickrun'
@@ -87,6 +87,9 @@ set tabstop=4 shiftwidth=4
 set autoindent
 set cindent
 set smartindent
+
+" Set indent to 2 spaces when writing html
+autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " Wrap lines
 set wrap
