@@ -7,7 +7,6 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color1:#222}
 alert = ${xrdb:color0:#222}
 
-
 [bar/bottom]
 ;monitor = ${env:MONITOR:HDMI-1}
 bottom = true
@@ -146,7 +145,7 @@ label = %time%
 
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
