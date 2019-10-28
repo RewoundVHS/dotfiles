@@ -4,6 +4,7 @@ exec --no-startup-id wal -R
 exec --no-startup-id urxvt -q -f -o
 exec --no-startup-id deluged
 exec --no-startup-id mpd
+exec --no-startup-id an2linuxserver.py
 exec --no-startup-id ~/Documents/scripts/backuphome.sh --sleep
 exec --no-startup-id ~/.screenlayout/layout.sh
 
@@ -73,7 +74,8 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -nb "$bgalt" -nf "$fgalt" -sb "$fgalt" -sf "$bgalt" -fn 'scientifica'
 #bindsym $mod+d exec dmenu_run -nb "$bg" -nf "$fg" -sb "$fg" -sf "$bg" -fn 'monospace'
-bindsym $mod+r exec rofi -show run
+bindsym $mod+r exec rofi -show run -font "Fira Code 8"
+bindsym $mod+s exec rofi -show ssh -font "Fira Code 8"
 
 # gpg decrypt clipboard
 bindsym $mod+Shift+d exec ~/Documents/scripts/decryptclip.sh
