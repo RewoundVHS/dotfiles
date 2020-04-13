@@ -4,6 +4,7 @@ exec --no-startup-id wal -R
 exec --no-startup-id urxvt -q -f -o
 exec --no-startup-id deluged
 exec --no-startup-id mpd
+exec --no-startup-id udiskie
 exec --no-startup-id an2linuxserver.py
 exec --no-startup-id ~/Documents/scripts/backuphome.sh --sleep
 exec --no-startup-id ~/.screenlayout/layout.sh
@@ -79,6 +80,9 @@ bindsym $mod+s exec rofi -show ssh -font "Fira Code 8"
 
 # gpg decrypt clipboard
 bindsym $mod+Shift+d exec ~/Documents/scripts/decryptclip.sh
+
+# sync media player
+bindsym $mod+m exec ~/Documents/scripts/syncmedia.sh
 
 # change focus
 bindsym $mod+$left focus left

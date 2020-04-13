@@ -41,7 +41,7 @@ font-3 = Noto Sans CJK JP:size=10:antialias=true;0
 
 modules-left = i3
 modules-center = xwindow
-modules-right = battery volume cpu memory date time powermenu
+modules-right = mpd battery volume cpu memory date time powermenu
 
 
 [module/xwindow]
@@ -78,6 +78,11 @@ label-urgent-background = ${colors.foreground-alt}
 
 label-urgent-padding = 2
 
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+label-song = ♫%artist% - %title%
 
 [module/cpu]
 type = internal/cpu
