@@ -46,7 +46,7 @@ Plugin 'HendrikPetertje/vimify'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Autocompletion
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " QuickRun plugin
 Plugin 'thinca/vim-quickrun'
@@ -54,8 +54,8 @@ Plugin 'thinca/vim-quickrun'
 " Goyo plugin
 Plugin 'junegunn/goyo.vim'
 
-" Gruvbox theme
-Plugin 'morhetz/gruvbox'
+" Dracula theme
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,8 +66,7 @@ let g:lightline = {}
 set laststatus=2
 
 " Colorscheme configuration
-set background=dark
-colorscheme gruvbox
+colorscheme dracula
 
 " Current line number and lines relative to current
 set number relativenumber
