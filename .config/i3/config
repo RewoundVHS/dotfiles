@@ -6,7 +6,7 @@ exec --no-startup-id deluged
 exec --no-startup-id mpd
 exec --no-startup-id udiskie
 exec --no-startup-id an2linuxserver.py
-exec --no-startup-id ~/Documents/scripts/backuphome.sh --sleep
+exec --no-startup-id ~/Development/scripts/backuphome.sh --sleep
 exec --no-startup-id ~/.screenlayout/layout.sh
 
 # Disable Caps Lock and map to Escape
@@ -28,9 +28,9 @@ set $mod Mod4
 floating_modifier $mod
 
 # colors
-set_from_resource $fg i3wm.color15 #ffffff
-set_from_resource $bg i3wm.color3 #f0f0f0
-set_from_resource $bgalt i3wm.color0 #f0f0f0
+set_from_resource $fg i3wm.color5 #ffffff
+set_from_resource $bg i3wm.color8 #f0f0f0
+set_from_resource $bgalt i3wm.color1 #f0f0f0
 set_from_resource $fgalt i3wm.color7 #f0f0f0
 client.focused          $fg     $fg     $bg  $fg       $fg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
@@ -75,14 +75,14 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -nb "$bgalt" -nf "$fgalt" -sb "$fgalt" -sf "$bgalt" -fn 'scientifica'
 #bindsym $mod+d exec dmenu_run -nb "$bg" -nf "$fg" -sb "$fg" -sf "$bg" -fn 'monospace'
-bindsym $mod+r exec rofi -show run -font "Fira Code 8"
-bindsym $mod+s exec rofi -show ssh -font "Fira Code 8"
+bindsym $mod+r exec rofi -show run -font "scientifica medium 8"
+bindsym $mod+s exec rofi -show ssh -font "scientifica medium 8"
 
 # gpg decrypt clipboard
-bindsym $mod+Shift+d exec ~/Documents/scripts/decryptclip.sh
+bindsym $mod+Shift+d exec ~/Development/scripts/decryptclip.sh
 
 # sync media player
-bindsym $mod+m exec ~/Documents/scripts/syncmedia.sh
+bindsym $mod+m exec ~/Development/scripts/syncmedia.sh
 
 # change focus
 bindsym $mod+$left focus left
@@ -122,6 +122,9 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+
+# sticky window toggle
+bindsym $mod+Shift+n sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -191,7 +194,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 25
 bindsym $mod+o mode "resize"
 
 # lock screen
-bindsym $mod+Shift+o exec ~/Documents/scripts/lock.sh
+bindsym $mod+Shift+o exec ~/Development/scripts/lock.sh
 
 # open firefox
 bindsym $mod+Shift+f exec firefox
@@ -200,7 +203,7 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+t exec thunar
 
 # backup home directory
-bindsym $mod+Shift+b exec ~/Documents/scripts/backuphome.sh
+bindsym $mod+Shift+b exec ~/Development/scripts/backuphome.sh
 
 # random wallpaper
 bindsym $mod+Shift+w exec wal -i ~/Pictures/Wallpapers
@@ -209,7 +212,7 @@ bindsym $mod+Shift+w exec wal -i ~/Pictures/Wallpapers
 # media controls  #
 # # # # # # # # # #
 
-bindsym $mod+p exec ~/Documents/scripts/mpdtoggle.sh
+bindsym $mod+p exec ~/Development/scripts/mpdtoggle.sh
 
 # # # # # # # # # # #
 # display settings  #

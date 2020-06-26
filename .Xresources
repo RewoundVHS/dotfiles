@@ -2,47 +2,26 @@
 
 ! urvxt setup
 
-URxvt.font: xft:scientifica:pixelsize=11:antialias=false
-/* URxvt.bold.font: xft:scientifica:pixelsize=11,style=bold */
-/* URxvt.italic.font: xft:scientifica:pixelsize=11,style=bold */
+/* URxvt.font: xft:scientifica:pixelsize=11:antialias=false */
+/* URxvt.boldFont: */
+/* URxvt.italicFont: */
+/* URxvt.letterSpace: 1 */
+
+URxvt.font: xft:cozette:pixelsize=11:antialias=false
 URxvt.boldFont:
 URxvt.italicFont:
-URxvt.letterSpace: 1
+URxvt.letterSpace: 0
 
 /* URxvt.font: xft:curie:pixelsize=11:antialias=false */
 /* URxvt.boldFont: xft:curie:pixelsize=11,style=bold */
 /* URxvt.italicFont: xft:curie:pixelsize=11,style=italic */
 /* URxvt.letterSpace: 1 */
 
-/* URxvt.font: xft:Fira Code:size=7,style=medium */
-/* URxvt*font: xft:Fira Code:size=7,style=medium,xft:Symbola:size=7 */
-/* URxvt.boldFont: xft:Fira Code:size=7,style=bold */
-/* URxvt.italicFont: xft:Fira Code:size=7,style=bold */
-/* URxvt.boldItalicFont: xft:Fira Code:size=7,style=bold */
-/* URxvt.letterSpace: -1 */
-
-/* URxvt.font: xft:Source Code Pro:size=7,style=medium */
-/* URxvt.boldFont: xft:Source Code Pro:size=7,style=bold */
-/* URxvt.italicFont: xft:Source Code Pro:size=7,style=bold */
-/* URxvt.boldItalicFont: xft:Source Code Pro:size=7,style=bold */
-/* URxvt.letterSpace: -1 */
-
 /* URxvt.font: xft:Roboto Mono:size=7,style=medium */
 /* URxvt.boldFont: xft:Roboto Mono:size=7,style=bold */
 /* URxvt.italicFont: xft:Roboto Mono:size=7,style=bold */
 /* URxvt.boldItalicFont: xft:Roboto Mono:size=7,style=bold */
 /* URxvt.letterSpace: -1 */
-
-/* URxvt.font: xft:SFMono:size=7,style=medium,xft:Sunflower:size=7,style=medium */
-/* URxvt.boldFont: xft:SFMono:size=7,style=bold */
-/* URxvt.italicFont: xft:SFMono:size=7,style=bold */
-/* URxvt.boldItalicFont: xft:SFMono:size=7,style=bold */
-/* URxvt.letterSpace: -1 */
-
-/* URxvt.font: xft:Anka/Coder:size=6,style=medium */
-/* URxvt.boldFont: xft:Anka/Coder:size=6,style=bold */
-/* URxvt.italicFont: xft:Anka/Coder:size=6,style=bold */
-/* URxvt.boldItalicFont: xft:Anka/Coder:size=6,style=bold */
 
 ! urxvt launch browser
 URxvt.perl-ext-common: default,matcher
@@ -65,7 +44,7 @@ URxvt.keysym.Shift-Up: command:\033]720;10\007
 URxvt.keysym.Shift-Down: command:\033]721;10\007
 
 ! rofi setup
-rofi.font: curie 12
+rofi.font: scientifica
 rofi.terminal: urxvt
 rofi.ssh-client: ssh
 rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
