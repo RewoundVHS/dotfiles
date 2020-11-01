@@ -5,9 +5,9 @@ exec --no-startup-id urxvt -q -f -o
 exec --no-startup-id deluged
 exec --no-startup-id mpd
 exec --no-startup-id udiskie
-exec --no-startup-id an2linuxserver.py
 exec --no-startup-id ~/Development/scripts/backuphome.sh --sleep
 exec --no-startup-id ~/.screenlayout/layout.sh
+exec --no-startup-id ~/.config/polybar/launch.sh
 
 # Disable Caps Lock and map to Escape
 exec --no-startup-id xmodmap -e "clear lock"
@@ -231,9 +231,6 @@ gaps outer 10
 # # # # # # # # # # # #
 # autostart programs  #
 # # # # # # # # # # # #
-
-# polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # compton
 exec_always compton -b --config $HOME/.config/compton.conf

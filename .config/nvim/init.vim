@@ -174,6 +174,9 @@ nnoremap <Leader>n :NERDTreeToggle<Enter>
 " Leader r to execute current buffer
 nnoremap <Leader>r :QuickRun<Enter>
 
+" Leader s to split window
+nnoremap <Leader>s :split<Enter>
+
 " Leader q to close current buffer
 nnoremap <Leader>q :q<Enter>
 
