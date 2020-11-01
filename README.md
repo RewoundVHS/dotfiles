@@ -11,11 +11,10 @@ These configuration files define my desktop GNU/Linux systems.
 ## Dependencies
 
 In order to properly use my configs you'll need a few packages. I'm currently using the following:
-- vim
+- nvim
 - i3-gaps
 - polybar
-- zsh
-- oh-my-zsh
+- fish
 - dmenu
 - rofi
 - python-pywal
