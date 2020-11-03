@@ -1,8 +1,4 @@
 # Startup
-exec --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id wal -R
-exec --no-startup-id urxvt -q -f -o
-exec --no-startup-id mpd
 exec --no-startup-id ~/Development/scripts/backuphome.sh --sleep
 
 # Disable Caps Lock and map to Escape
