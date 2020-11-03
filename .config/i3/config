@@ -2,12 +2,8 @@
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id wal -R
 exec --no-startup-id urxvt -q -f -o
-exec --no-startup-id deluged
 exec --no-startup-id mpd
-exec --no-startup-id udiskie
 exec --no-startup-id ~/Development/scripts/backuphome.sh --sleep
-exec --no-startup-id ~/.screenlayout/layout.sh
-exec --no-startup-id ~/.config/polybar/launch.sh
 
 # Disable Caps Lock and map to Escape
 exec --no-startup-id xmodmap -e "clear lock"
