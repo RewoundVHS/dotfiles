@@ -15,12 +15,15 @@ In order to properly use my configs you'll need a few packages. I'm currently us
 - i3-gaps
 - polybar
 - fish
-- dmenu
 - rofi
 - python-pywal
 - compton
 - i3lock
 - urxvt
+
+## deploy.sh
+
+This bash script deploys my dotfiles on an Arch Linux system. Please read through this script before running it as it installs packages.
 
 ## randwall.py
 

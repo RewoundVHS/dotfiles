@@ -58,15 +58,13 @@ mode "resize" {
 # start a terminal
 bindsym $mod+Return exec urxvt
 
-#take a screenshot
+# take a screenshot
 bindsym $mod+Shift+p exec flameshot gui
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -nb "$bgalt" -nf "$fgalt" -sb "$fgalt" -sf "$bgalt" -fn 'scientifica'
-#bindsym $mod+d exec dmenu_run -nb "$bg" -nf "$fg" -sb "$fg" -sf "$bg" -fn 'monospace'
+# open programs with rofi
 bindsym $mod+r exec rofi -show run -font "scientifica medium 8"
 bindsym $mod+s exec rofi -show ssh -font "scientifica medium 8"
 

@@ -5,7 +5,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 if [ "$1" = "--strap" ] | [ "$1" = "-s" ]; then
 
 	sudo pacman -Syu
-	sudo pacman -S nvim rofi python-pywal compton rxvt-unicode i3lock paru feh fish firefox dunst curl
+	sudo pacman -S nvim rofi python-pywal compton rxvt-unicode i3lock paru feh fish firefox dunst curl flameshot
 	paru -S i3-gaps polybar
 
 fi
