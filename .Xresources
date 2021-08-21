@@ -7,9 +7,9 @@
 /* URxvt.italicFont: */
 /* URxvt.letterSpace: 1 */
 
-URxvt.font: xft:cozette:pixelsize=11:antialias=false
-URxvt.boldFont:
-URxvt.italicFont:
+URxvt.font: xft:JetBrainsMono-Medium:pixelsize=15
+URxvt.boldFont: xft:JetBrainsMono:pixelsize=15:style=bold
+URxvt.italicFont: xft:JetBrainsMono:pixelsize=15:style=italic
 URxvt.letterSpace: 0
 
 /* URxvt.font: xft:curie:pixelsize=11:antialias=false */
@@ -28,6 +28,7 @@ URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&amp;@#-]*[\\w/-]
+URxvt.backend: glx
 
 URxvt*url-launcher:     /usr/bin/firefox
 URxvt*scrollBar:        false

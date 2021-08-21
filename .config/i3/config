@@ -5,6 +5,9 @@ exec --no-startup-id ~/Development/scripts/backuphome.sh --sleep
 exec --no-startup-id xmodmap -e "clear lock"
 exec --no-startup-id xmodmap -e "keysym Caps_Lock = Escape"
 
+# Run polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # # # # # # #
 # variables #
 # # # # # # #
@@ -20,7 +23,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # colors
-set_from_resource $fg i3wm.color5 #ffffff
+set_from_resource $fg i3wm.color6 #ffffff
 set_from_resource $bg i3wm.color8 #f0f0f0
 set_from_resource $bgalt i3wm.color1 #f0f0f0
 set_from_resource $fgalt i3wm.color7 #f0f0f0
@@ -56,7 +59,7 @@ mode "resize" {
 # # # # # # #
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # take a screenshot
 bindsym $mod+Shift+p exec flameshot gui
@@ -65,8 +68,8 @@ bindsym $mod+Shift+p exec flameshot gui
 bindsym $mod+Shift+q kill
 
 # open programs with rofi
-bindsym $mod+r exec rofi -show run -font "scientifica medium 8"
-bindsym $mod+s exec rofi -show ssh -font "scientifica medium 8"
+bindsym $mod+r exec rofi -show run -font "Jet Brains Mono medium 12"
+bindsym $mod+s exec rofi -show ssh -font "Jet Brains Mono medium 12"
 
 # gpg decrypt clipboard
 bindsym $mod+Shift+d exec ~/Development/scripts/decryptclip.sh
@@ -212,7 +215,7 @@ bindsym $mod+p exec ~/Development/scripts/mpdtoggle.sh
 font pango: scientifica
 
 # window borders
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 7
 
 # gaps
 gaps inner 10

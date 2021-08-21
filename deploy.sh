@@ -4,8 +4,12 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 if [ "$1" = "--strap" ] | [ "$1" = "-s" ]; then
 
+	sudo pacman -S --needed base-devel
+	git clone https://aur.archlinux.org/paru.git
+	cd paru
+	makepkg -si
 	sudo pacman -Syu
-	sudo pacman -S nvim rofi python-pywal compton rxvt-unicode i3lock paru feh fish firefox dunst curl flameshot
+	sudo pacman -S nvim rofi python-pywal compton rxvt-unicode i3lock paru feh fish firefox dunst curl flameshot xorg xorg-xinit
 	paru -S i3-gaps polybar
 
 fi
