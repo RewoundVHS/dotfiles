@@ -51,7 +51,7 @@ mode "resize" {
         bindsym Right       resize grow width 10 px or 10 ppt
 
         # back to normal: Enter
-        bindsym Shift+Enter mode "default"
+        bindsym Enter mode "default"
 }
 
 # # # # # # #
@@ -68,8 +68,8 @@ bindsym $mod+Shift+p exec flameshot gui
 bindsym $mod+Shift+q kill
 
 # open programs with rofi
-bindsym $mod+r exec rofi -show run -font "Jet Brains Mono medium 12"
-bindsym $mod+s exec rofi -show ssh -font "Jet Brains Mono medium 12"
+bindsym $mod+r exec rofi -show run -font "iosevka 12"
+bindsym $mod+s exec rofi -show ssh -font "iosevka 12"
 
 # gpg decrypt clipboard
 bindsym $mod+Shift+d exec ~/Development/scripts/decryptclip.sh
@@ -185,6 +185,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 25
 bindsym XF86MonBrightnessDown exec xbacklight -dec 25
 
 bindsym $mod+o mode "resize"
+
 
 # lock screen
 bindsym $mod+Shift+o exec ~/Development/scripts/lock.sh
