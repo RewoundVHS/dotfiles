@@ -24,7 +24,3 @@ In order to properly use my configs you'll need a few packages. I'm currently us
 ## deploy.sh
 
 This bash script deploys my dotfiles on an Arch Linux system. Please read through this script before running it as it installs packages.
-
-## randwall.py
-
-This short script chooses a random wallpaper from ~/Pictures/Wallpapers and sets the theme with pywal. This also is useless as pywal will select a random image if you point it at a directory.
