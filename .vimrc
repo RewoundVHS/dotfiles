@@ -90,6 +90,10 @@ set smartindent
 " Set indent to 2 spaces when writing html
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 
+" Set indent to 2 spaces when writing yml
+autocmd FileType yml setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab
+
 " Wrap lines
 set wrap
 
@@ -151,22 +155,18 @@ nnoremap <Leader>q :q<Enter>
 " Leader x to write and close all buffers
 nnoremap <Leader>x :xa<Enter>
 
-" F6 to spellcheck
-map <F6> :setlocal spell! spelllang=en_us<CR>
+" Leader s to spellcheck
+map <Leader>s :setlocal spell! spelllang=en_us<CR>
 
 " Shift tab to remove tab
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
-" if empty(v:servername) && exists('*remote_startserver')
-"     call remote_startserver('VIM')
-" endif
-
 " jk to ESC while in Insert mode
 inoremap jk <Esc>
 
 " Remove trailing whitespace on buffer write
-autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWritePre * %s/\s\+$//e
 
 " :W to write with sudo
 :command W w !sudo tee >/dev/null "%"
