@@ -162,9 +162,6 @@ map <Leader>s :setlocal spell! spelllang=en_us<CR>
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
-" jk to ESC while in Insert mode
-inoremap jk <Esc>
-
 " Remove trailing whitespace on buffer write
 " autocmd BufWritePre * %s/\s\+$//e
 
