@@ -1,0 +1,20 @@
+# "window.opacity" = 1.0
+
+[font]
+size = 12
+
+[font.bold]
+family = "iosevka"
+style = "bold"
+
+[font.italic]
+family = "iosevka"
+style = "italic"
+
+[font.normal]
+family = "iosevka"
+style = "regular"
+
+[window]
+padding = { x = 5, y = 5 }
+# opacity = 0.9
