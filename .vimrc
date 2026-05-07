@@ -12,58 +12,54 @@ set mouse=a
 let mapleader=","
 let maplocalleader = ","
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin()
 
 " NerdTree plugin
-Plugin 'scrooloose/nerdTree'
+Plug 'scrooloose/nerdTree'
 
 " Syntax linting
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 
 " Comment lines with gc
-Plugin 'tpope/vim-commentary'
-
-" Statusline plugin
-Plugin 'itchyny/lightline.vim'
+Plug 'tpope/vim-commentary'
 
 " Surround plugin
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Targets plugin
-Plugin 'wellle/targets.vim'
-
-" Spotify plugin
-Plugin 'HendrikPetertje/vimify'
+Plug 'wellle/targets.vim'
 
 " C++ highlighting plugin
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Autocompletion
-Plugin 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " QuickRun plugin
-Plugin 'thinca/vim-quickrun'
+Plug 'thinca/vim-quickrun'
 
 " Goyo plugin
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 
 " Dracula theme
-Plugin 'dracula/vim', { 'name': 'dracula' }
+Plug 'dracula/vim', { 'name': 'dracula' }
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
-" lightline configuration
-let g:lightline = {}
-set laststatus=2
+" Map <tab> and <CR> for coc.nvim
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Colorscheme configuration
 colorscheme dracula
@@ -137,6 +133,9 @@ autocmd BufNewFile,BufRead *.tex Goyo | setlocal wrap linebreak nolist
 " Sets default splits to below and right side
 set splitbelow splitright
 
+" F3 to toggle paste mode
+set pastetoggle=<F3>
+
 " Leader arrow to navigate splits
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -161,6 +160,9 @@ map <Leader>s :setlocal spell! spelllang=en_us<CR>
 " Shift tab to remove tab
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
+
+" jk to ESC while in Insert mode
+" inoremap jk <Esc>
 
 " Remove trailing whitespace on buffer write
 " autocmd BufWritePre * %s/\s\+$//e
